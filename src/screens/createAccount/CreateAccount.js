@@ -4,8 +4,15 @@ import MyButton from '../../components/MyButton'
 import imagePath from '../../globalStyle/imagePath'
 import { moderateScale, moderateVerticalScale, scale } from 'react-native-size-matters';
 import colors from '../../globalStyle/colors';
+import navigationStrings from '../../navigationStrings';
 
-const CreateAccount = () => {
+const CreateAccount = ({ navigation }) => {
+
+	const handleLogin = () => { }
+	const handleCreateAccount = () => {
+		navigation.navigate(navigationStrings.chooseAccount)
+	}
+
 	return (
 		<View style={styles.container}>
 			<View style={styles.topView}>
@@ -18,10 +25,11 @@ const CreateAccount = () => {
 					<Text style={styles.text1Style}>Welcome!</Text>
 					<Text style={styles.text2Style}>Building bright futures through earned tuition.</Text>
 				</View>
-				<View style={{ width: '100%' }}>
+				<View style={{ width: '90%', marginBottom: moderateVerticalScale(36) }}>
 
 					<MyButton btnText='Login' />
-					<MyButton btnText='Create Account' />
+					<View style={{ marginTop: moderateVerticalScale(16) }} />
+					<MyButton btnText='Create Account' outline onPress={handleCreateAccount} />
 				</View>
 			</View>
 		</View>
@@ -38,7 +46,8 @@ const styles = StyleSheet.create({
 	},
 	topView: {
 		flex: 0.5,
-		backgroundColor: colors.white
+		backgroundColor: colors.white,
+		alignItems: 'center'
 	},
 	bottomView: {
 		flex: 0.5,
