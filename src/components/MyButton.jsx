@@ -15,7 +15,7 @@ const MyButton = ({ onPress, btnText, outline, btnTextStyle }) => {
       <Text
         style={[
           styles.btnTextStyle,
-          outline ? styles.textOutline : styles.textNormal,
+          { color: outline ? colors.outline : colors.white },
         ]}
       >
         {btnText || "btnText"}
@@ -28,11 +28,9 @@ const styles = StyleSheet.create({
   btnStyle: {
     backgroundColor: colors.btnBgColor,
     height: moderateScale(60),
-    // width: moderateScale(355),
     borderWidth: 1,
     borderStyle: "solid",
     borderRadius: 8,
-
     justifyContent: "center",
   },
   normalButton: {

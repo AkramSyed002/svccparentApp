@@ -1,5 +1,6 @@
 export default {
 	createAccount: 'creatAccount',
-	chooseAccount: 'chooseAccount'
+	selectAccount: 'selectAccount',
+	chooseAccount: 'chooseAccount',
 
 }
