@@ -26,15 +26,20 @@ const MyInputField = ({
 	...props
 }) => {
 	return (
-		<View style={{ ...styles.inputStyle, ...inputStyle }}>
-			<Text style={styles.label}>{title || "Title"}</Text>
+		<View
+		//  style={[styles.inputStyle, inputStyle]}
+		>
+			<Text style={styles.label}>{title}</Text>
 			<View
 				style={{
+					display: 'flex',
 					flexDirection: "row",
-					justifyContent: "space-between",
 					alignItems: "center",
-					// borderBottomWidth: 1,
-					// borderBottomColor: colors.white,
+					backgroundColor: colors.inputBg,
+					borderWidth: 1,
+					borderColor: colors.inputBg,
+					borderRadius: moderateScale(4),
+					marginTop: moderateVerticalScale(8)
 				}}
 			>
 				<TextInput
@@ -42,15 +47,17 @@ const MyInputField = ({
 					placeholder={placeHolder || "Placeholder"}
 					onChangeText={onChangeText}
 					{...props}
+
 				/>
 				{rightIcon && (
-					<TouchableOpacity activeOpacity={0.8} onPress={onPressIcon}>
+					<TouchableOpacity activeOpacity={0.8} onPress={onPressIcon} style={{ marginRight: 8 }} >
 						<Image
-							source={imagePath.backIcon}
+							source={imagePath.iconHide}
 							style={{
 								width: 20,
 								height: 20,
-								opacity: "0.3",
+								opacity: "0.7",
+
 							}}
 						/>
 					</TouchableOpacity>
@@ -65,7 +72,7 @@ export default MyInputField;
 const styles = StyleSheet.create({
 	inputStyle: {
 		borderWidth: 1,
-		borderColor: colors.outline,
+		borderColor: 'none',
 		borderRadius: moderateScale(4),
 	},
 	inlineStyle: {
@@ -77,6 +84,7 @@ const styles = StyleSheet.create({
 		borderRadius: 8,
 		paddingHorizontal: moderateScale(8),
 		paddingVertical: moderateScale(16),
+
 	},
 	label: {
 		fontSize: scale(14),

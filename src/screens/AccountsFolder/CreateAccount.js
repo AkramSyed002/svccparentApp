@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
 	},
 	logoStyle: {
 		width: moderateScale(335),
-
 		height: moderateScale(335),
 	},
 	text1Style: {

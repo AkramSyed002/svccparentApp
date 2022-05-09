@@ -1,10 +1,12 @@
-import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { moderateScale, scale } from "react-native-size-matters";
 import colors from "../globalStyle/colors";
+import imagePath from '../globalStyle/imagePath'
 
-const MyButton = ({ onPress, btnText, outline, btnTextStyle }) => {
+const MyButton = ({ onPress, btnText, outline, btnTextStyle, rightIcon }) => {
   return (
+
     <TouchableOpacity
       onPress={onPress}
       style={[
@@ -12,19 +14,36 @@ const MyButton = ({ onPress, btnText, outline, btnTextStyle }) => {
         outline ? styles.outlineButton : styles.normalButton,
       ]}
     >
-      <Text
-        style={[
-          styles.btnTextStyle,
-          { color: outline ? colors.outline : colors.white },
-        ]}
-      >
-        {btnText || "btnText"}
-      </Text>
+      <View style={styles.container}>
+        <Text
+          style={[
+            styles.btnTextStyle,
+            { color: outline ? colors.outline : colors.white },
+          ]}
+        >
+          {btnText || "btnText"}
+        </Text>
+        {rightIcon ? <Image source={imagePath.iconNext} style={{ marginLeft: 8, width: 25, height: 20 }} /> : null}
+      </View>
+
+
     </TouchableOpacity>
+
+
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center'
+
+
+
+  },
   btnStyle: {
     backgroundColor: colors.btnBgColor,
     height: moderateScale(60),

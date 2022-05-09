@@ -9,51 +9,43 @@ import { moderateScale, moderateVerticalScale, scale } from 'react-native-size-m
 import MyParagraph from '../../components/MyParagraph'
 import navigationStrings from '../../navigationStrings';
 import MyButton from '../../components/MyButton'
+import { Button } from 'react-native-web';
 
 
-const ChooseAccount = ({ navigation }) => {
+const AddStudent = ({ navigation }) => {
 	const [isChecked, setIsChecked] = useState(false)
 	return (
 		<View style={styles.container}>
 
-			<View style={{ display: 'flex', flex: 1 }} >
+			<View style={{ flex: 0.5 }} >
 				<MyHeader />
-				<Text style={styles.title}>Create Account</Text>
-				<MyParagraph paragraph={'Join our community and start earning tuition for Sauk Valley Community College!'} />
+				<Text style={styles.title}>Add a student </Text>
+				<MyParagraph paragraph={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} />
 				<View style={{ marginTop: 20 }} />
-				<MyInputField title={'Email Address'} placeHolder={'example@hello.edu'} />
+				<MyInputField title={'Email Address'} placeHolder={'Email Address'} />
 				<View style={{ marginTop: 20 }} />
-				<MyInputField title={'Password'} placeHolder={'Enter Password'} rightIcon />
-				<MyInputField placeHolder={'Confirm Password'} rightIcon />
-				<View style={styles.checkboxContainer}>
+				<MyInputField title={'Confirm Email Address'} placeHolder={'Email Address'} />
 
-					<Checkbox
-						style={styles.checkbox}
-						value={isChecked}
-						onValueChange={setIsChecked}
-						color={isChecked ? '' : colors.inputBg}
-					/>
-					<Text style={styles.checkboxText}>I agree to the <Text onPress={() => navigation.navigate(navigationStrings.termsOfService)} style={{ color: colors.outline }}>Terms of Service</Text> and <Text style={{ color: colors.outline }}
-						onPress={() => navigation.navigate(navigationStrings.privacyPolicy)}
-					>Privacy Policy</Text></Text>
-				</View>
-				<View style={{ marginTop: 20, display: 'flex', justifyContent: 'space-between', flexGrow: 1, }} >
-					<MyInputField placeHolder={'Enter Access Code*'} rightIcon />
-					<MyButton btnText={'Create Account'} />
-				</View>
+			</View>
+			<View style={{ flex: 0.5, flexGrow: 1, justifyContent: 'flex-end' }}>
+				<MyButton btnText={'Continue'} />
 				<View style={{ marginTop: 20 }} />
 
 			</View>
+
+
+
 
 
 		</View>
 	)
 }
 
-export default ChooseAccount
+export default AddStudent
 
 const styles = StyleSheet.create({
 	container: {
+		flex: 1,
 		backgroundColor: colors.mainThem,
 		paddingHorizontal: moderateVerticalScale(16),
 		flexGrow: 1,
