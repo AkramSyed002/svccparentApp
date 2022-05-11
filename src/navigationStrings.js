@@ -4,6 +4,8 @@ export default {
 	chooseAccount: 'chooseAccount',
 	termsOfService: 'termsOfService',
 	privacyPolicy: 'privacyPolicy',
-	addStudent: 'addStudent'
+	addStudent: 'addStudent',
+	login: 'login',
+	dashboard: 'dashboard',
 
 }

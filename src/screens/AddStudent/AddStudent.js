@@ -9,7 +9,7 @@ import { moderateScale, moderateVerticalScale, scale } from 'react-native-size-m
 import MyParagraph from '../../components/MyParagraph'
 import navigationStrings from '../../navigationStrings';
 import MyButton from '../../components/MyButton'
-import { Button } from 'react-native-web';
+
 
 
 const AddStudent = ({ navigation }) => {
